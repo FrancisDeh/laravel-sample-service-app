@@ -10,8 +10,9 @@
             @if($serviceUsers->count() > 1)
                     <a href="{{ route('service_users.export.pdf') }}" title="Export Data to Pdf" ><i class="fa fa-file-pdf red-text"></i></a>
                 @endif
-        @endif
         </span>
+        @endif
+        
     </p>
 
     <div class="divider"></div>
