@@ -2,11 +2,16 @@
 @section('title', 'Service Users Page')
 
 @section('content-table')
-    <p class="flow-text">Service Users ({{ $serviceUsers->count() }})
+    <p class="flow-text">
+        Service Users ({{ $serviceUsers->count() }})
+        @if($serviceUsers->count())
         <span class="right">
         <a href="{{ route('service_users.export.excel') }}" title="Export Data to Excel"><i class="fa fa-file-export green-text"></i></a>
-        <a href="{{ route('service_users.export.pdf') }}" title="Export Data to Pdf" ><i class="fa fa-file-pdf red-text"></i></a>
-    </span>
+            @if($serviceUsers->count() > 1)
+                    <a href="{{ route('service_users.export.pdf') }}" title="Export Data to Pdf" ><i class="fa fa-file-pdf red-text"></i></a>
+                @endif
+        @endif
+        </span>
     </p>
 
     <div class="divider"></div>
